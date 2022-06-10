@@ -8,11 +8,11 @@ class ActiveTodoCountState extends Equatable {
   factory ActiveTodoCountState.initial() =>
       const ActiveTodoCountState(activeTodoCount: 0);
 
-  @override
-  String toString() => 'ActiveTodoCountState(activeTodoCount: $activeTodoCount)';
-
   ActiveTodoCountState copyWith({int? activeTodoCount}) =>
       ActiveTodoCountState(activeTodoCount: activeTodoCount ?? this.activeTodoCount);
+
+  @override
+  String toString() => 'ActiveTodoCountState(activeTodoCount: $activeTodoCount)';
 
   @override
   List<Object> get props => [activeTodoCount];
