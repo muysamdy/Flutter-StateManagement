@@ -23,11 +23,12 @@ class SearchAndFilterTodo extends StatelessWidget {
           ),
           onChanged: (String? newSearchTerm) {
             if (newSearchTerm != null) {
-              // context.read<TodoSearchCubit>().setSearchTerm(newSearchTerm);
+              debouce.run(
+                  () => context.read<TodoSearchCubit>().setSearchTerm(newSearchTerm));
             }
           },
         ),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
